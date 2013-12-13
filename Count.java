@@ -59,7 +59,34 @@ public class Count {
 	}
 		
     
-  
+  //This method returns the number of characters up till a certain line l.
+ //This includes spaces and newlines characters.  It is useful for a goto line implementation.	
+  public int getCharCountAtLine(int l){
+		
+		
+		int myLength = 0;
+		int counter =0;
+		 Scanner s2 = new Scanner(text); 
+		
+		 while(s2.hasNextLine())
+		 {
+			String s =(s2.nextLine());
+			myLength= myLength+s.length(); 
+			counter++;
+			if (counter==(l))
+			{
+				s2.close();
+				return myLength;
+			}
+			else{
+				myLength++;
+			}
+		 }
+		 
+		s2.close();
+		return myLength;
+		
+  }
   
   
   
